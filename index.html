@@ -4,75 +4,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DigitalStore | متجرك الرقمي</title>
+<title>Ozzexx_store | المتجر الرقمي</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
-header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #28314b}
-.logo{font-size:23px;font-weight:bold;color:#63a8ff}
-.hero{text-align:center;padding:45px 18px 30px}
-.hero h1{font-size:32px;margin-bottom:12px}
-.hero p{color:#b5bfd5;line-height:1.8}
-.tag{display:inline-block;background:#172747;color:#83b9ff;padding:8px 14px;border-radius:20px}
-main{padding:20px 6% 45px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:16px}
-.card{background:#141d32;border:1px solid #283651;border-radius:16px;padding:20px 14px;text-align:center}
-.emoji{font-size:38px}
-.card h2{font-size:19px}
-.card p{color:#aebbd1;font-size:14px}
-.price{font-size:22px;color:#79b8ff;font-weight:bold;margin:18px 0}
-button{border:0;background:#2879ee;color:white;border-radius:9px;padding:12px;width:100%;font-size:15px;cursor:pointer}
-.note{background:#172033;border-radius:12px;padding:16px;margin-top:25px;color:#c3cee1;line-height:1.8;font-size:13px}
-footer{text-align:center;color:#8f9ab0;padding:24px;border-top:1px solid #28314b;font-size:13px}
+body{margin:0;background:#090912;color:#fff;font-family:Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 6%;border-bottom:1px solid #28243c;background:#0d0b18}
+.logo{font-size:23px;font-weight:900;color:#b89aff}
+.logo span{color:#fff}
+.hero{text-align:center;padding:45px 18px 35px;background:radial-gradient(ellipse at top,#29204c 0%,#090912 70%)}
+.pill{display:inline-block;padding:8px 15px;background:#241b3c;border:1px solid #59418b;border-radius:30px;color:#d1baff;font-size:13px}
+.hero h1{font-size:30px;line-height:1.5;margin:18px 0 8px}
+.hero h1 span{color:#b89aff}
+.hero p{color:#aaa7bb;line-height:1.9;font-size:14px}
+main{padding:20px 5% 45px;max-width:1100px;margin:auto}
+.section-title{font-size:21px;margin:10px 0 20px}
+.filters{display:flex;gap:9px;overflow:auto;margin-bottom:22px}
+.filters button{white-space:nowrap;width:auto;background:#191627;border:1px solid #302944;color:#ddd;padding:10px 15px}
+.filters button.active{background:#7548d8;color:white}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:linear-gradient(145deg,#191629,#11111c);border:1px solid #302943;border-radius:18px;padding:17px 12px;text-align:center;min-width:0}
+.app-icon{height:67px;width:67px;object-fit:contain;border-radius:17px;margin:2px auto 10px;display:block;background:#242035;padding:9px}
+.card h2{font-size:17px;margin:10px 0}
+.card p{font-size:12px;color:#aaa7bb;line-height:1.7;min-height:34px}
+.price{font-size:15px;font-weight:bold;color:#c6aaff;margin:14px 0}
+button{border:0;border-radius:10px;background:#8655ed;color:white;padding:12px;font-size:14px;cursor:pointer}
+.card button{width:100%}
+button:active{opacity:.8}
+.notice{margin-top:22px;padding:15px;background:#171426;border:1px solid #302744;border-radius:13px;color:#bcb5d1;font-size:12px;line-height:1.9}
+footer{text-align:center;border-top:1px solid #292439;padding:25px 12px;color:#89839e;font-size:12px}
+.hidden{display:none}
+@media(min-width:650px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.hero h1{font-size:40px}}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">DigitalStore</div>
-<div>متجرك الرقمي ✦</div>
+  <div class="logo">Ozzexx<span>_store</span></div>
+  <div style="font-size:13px;color:#c7bfdc">متجرك الرقمي ✦</div>
 </header>
+
 <section class="hero">
-<span class="tag">عالم الاشتراكات الرقمية</span>
-<h1>كل خدماتك الرقمية في مكان واحد</h1>
-<p>اختار الخدمة والمدة اللي تناسبك<br>متجر تجريبي قيد الإعداد</p>
+  <span class="pill">✦ عالم الاشتراكات الرقمية</span>
+  <h1>ارتقِ بتجربتك مع <span>Ozzexx</span></h1>
+  <p>تطبيقاتك المفضلة في مكان واحد<br>تصفح الخدمات واكتشف المتجر</p>
 </section>
+
 <main>
-<div class="products">
-<div class="card">
-<div class="emoji">🤖</div>
-<h2>ChatGPT Plus</h2>
-<p>اشتراك تجريبي</p>
-<div class="price">تجريبي</div>
-<button onclick="order('ChatGPT Plus')">عرض التفاصيل</button>
-</div>
-<div class="card">
-<div class="emoji">🎬</div>
-<h2>Netflix</h2>
-<p>اشتراك تجريبي</p>
-<div class="price">تجريبي</div>
-<button onclick="order('Netflix')">عرض التفاصيل</button>
-</div>
-<div class="card">
-<div class="emoji">👻</div>
-<h2>Snapchat+</h2>
-<p>اشتراك تجريبي</p>
-<div class="price">تجريبي</div>
-<button onclick="order('Snapchat+')">عرض التفاصيل</button>
-</div>
-<div class="card">
-<div class="emoji">🎮</div>
-<h2>Gaming</h2>
-<p>خدمات ألعاب رقمية</p>
-<div class="price">قريبًا</div>
-<button onclick="order('Gaming')">عرض التفاصيل</button>
-</div>
-</div>
-<div class="note">⚠️ هذه نسخة تجريبية للعرض فقط. لا يوجد بيع أو دفع أو تفعيل حقيقي حاليًا. الأسعار والتوفر سيُحددان بعد التحقق من الموردين.</div>
+  <h2 class="section-title">✦ اكتشف التطبيقات</h2>
+
+  <div class="filters">
+    <button class="active" onclick="filterProducts('all',this)">الكل</button>
+    <button onclick="filterProducts('ai',this)">الذكاء الاصطناعي</button>
+    <button onclick="filterProducts('video',this)">المشاهدة</button>
+    <button onclick="filterProducts('social',this)">التواصل</button>
+    <button onclick="filterProducts('games',this)">الألعاب</button>
+  </div>
+
+  <div class="products">
+    <article class="card" data-category="ai">
+      <img class="app-icon" src="https://cdn.simpleicons.org/openai/FFFFFF" alt="OpenAI" onerror="this.style.display='none'">
+      <h2>ChatGPT Plus</h2>
+      <p>الذكاء الاصطناعي والإنتاجية</p>
+      <div class="price">السعر قريبًا</div>
+      <button onclick="details('ChatGPT Plus')">التفاصيل</button>
+    </article>
+
+    <article class="card" data-category="video">
+      <img class="app-icon" src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" onerror="this.style.display='none'">
+      <h2>Netflix</h2>
+      <p>أفلام ومسلسلات</p>
+      <div class="price">السعر قريبًا</div>
+      <button onclick="details('Netflix')">التفاصيل</button>
+    </article>
+
+    <article class="card" data-category="social">
+      <img class="app-icon" src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat" onerror="this.style.display='none'">
+      <h2>Snapchat+</h2>
+      <p>مميزات إضافية للتطبيق</p>
+      <div class="price">السعر قريبًا</div>
+      <button onclick="details('Snapchat+')">التفاصيل</button>
+    </article>
+
+    <article class="card" data-category="games">
+      <img class="app-icon" src="https://cdn.simpleicons.org/steam/FFFFFF" alt="Gaming" onerror="this.style.display='none'">
+      <h2>Gaming</h2>
+      <p>خدمات الألعاب الرقمية</p>
+      <div class="price">قريبًا</div>
+      <button onclick="details('Gaming')">التفاصيل</button>
+    </article>
+  </div>
+
+  <div class="notice">
+    ⚠️ هذه نسخة تجريبية من Ozzexx_store. الأسعار والبيع والتفعيل غير متاحة حاليًا. لن يتم تفعيل أي اشتراك قبل التحقق من توفر مصدر موثوق ومصرّح بإعادة البيع.
+  </div>
 </main>
-<footer>© 2026 DigitalStore — متجر تجريبي</footer>
+
+<footer>
+  <div style="font-size:16px;color:#b89aff;font-weight:bold;margin-bottom:9px">Ozzexx_store</div>
+  متجر رقمي تجريبي © 2026
+</footer>
+
 <script>
-function order(name){
-alert('اخترت: '+name+'\nالمتجر ما زال تجريبيًا، والطلبات غير مفعّلة حاليًا.');
+function filterProducts(category,button){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  button.classList.add('active');
+  document.querySelectorAll('.card').forEach(card=>{
+    card.classList.toggle('hidden',category!=='all'&&card.dataset.category!==category);
+  });
+}
+function details(name){
+  alert('اخترت '+name+'\nهذه خدمة تجريبية. الأسعار والطلبات والتفعيل غير مفعّلة بعد.');
 }
 </script>
 </body>
