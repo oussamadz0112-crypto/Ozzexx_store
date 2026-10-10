@@ -2,118 +2,559 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ozzexx_store | المتجر الرقمي</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#090912;color:#fff;font-family:Arial,sans-serif}
-header{display:flex;align-items:center;justify-content:space-between;padding:20px 6%;border-bottom:1px solid #28243c;background:#0d0b18}
-.logo{font-size:23px;font-weight:900;color:#b89aff}
-.logo span{color:#fff}
-.hero{text-align:center;padding:45px 18px 35px;background:radial-gradient(ellipse at top,#29204c 0%,#090912 70%)}
-.pill{display:inline-block;padding:8px 15px;background:#241b3c;border:1px solid #59418b;border-radius:30px;color:#d1baff;font-size:13px}
-.hero h1{font-size:30px;line-height:1.5;margin:18px 0 8px}
-.hero h1 span{color:#b89aff}
-.hero p{color:#aaa7bb;line-height:1.9;font-size:14px}
-main{padding:20px 5% 45px;max-width:1100px;margin:auto}
-.section-title{font-size:21px;margin:10px 0 20px}
-.filters{display:flex;gap:9px;overflow:auto;margin-bottom:22px}
-.filters button{white-space:nowrap;width:auto;background:#191627;border:1px solid #302944;color:#ddd;padding:10px 15px}
-.filters button.active{background:#7548d8;color:white}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.card{background:linear-gradient(145deg,#191629,#11111c);border:1px solid #302943;border-radius:18px;padding:17px 12px;text-align:center;min-width:0}
-.app-icon{height:67px;width:67px;object-fit:contain;border-radius:17px;margin:2px auto 10px;display:block;background:#242035;padding:9px}
-.card h2{font-size:17px;margin:10px 0}
-.card p{font-size:12px;color:#aaa7bb;line-height:1.7;min-height:34px}
-.price{font-size:15px;font-weight:bold;color:#c6aaff;margin:14px 0}
-button{border:0;border-radius:10px;background:#8655ed;color:white;padding:12px;font-size:14px;cursor:pointer}
-.card button{width:100%}
-button:active{opacity:.8}
-.notice{margin-top:22px;padding:15px;background:#171426;border:1px solid #302744;border-radius:13px;color:#bcb5d1;font-size:12px;line-height:1.9}
-footer{text-align:center;border-top:1px solid #292439;padding:25px 12px;color:#89839e;font-size:12px}
-.hidden{display:none}
-@media(min-width:650px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.hero h1{font-size:40px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>Ozzexx_store | Premium Digital Store</title>
+  <meta name="description" content="Ozzexx_store - متجر رقمي بتصميم أسود وذهبي">
+  <style>
+    :root {
+      --gold: #e9bd61;
+      --gold-light: #fff0b5;
+      --bg: #090909;
+      --panel: #121212;
+      --text: #f7f2e7;
+      --muted: #aaa397;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, #44321655, transparent 45%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Tahoma, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .gold { color: var(--gold); }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 6%;
+      background: #090909eF;
+      border-bottom: 1px solid #e9bd6130;
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: .5px;
+      background: linear-gradient(100deg, #fff1bd, #d19b37, #fff1bd);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shine 4s linear infinite;
+    }
+
+    .status {
+      color: var(--gold);
+      font-size: 11px;
+      border: 1px solid #e9bd6155;
+      border-radius: 30px;
+      padding: 7px 10px;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 75px 18px 55px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 260px;
+      height: 260px;
+      left: calc(50% - 130px);
+      top: 10px;
+      border-radius: 50%;
+      background: #d6a33c18;
+      filter: blur(55px);
+      animation: breathe 5s ease-in-out infinite alternate;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid #e9bd6140;
+      background: #e9bd610b;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(35px, 8vw, 64px);
+      line-height: 1.15;
+      margin: 22px 0 15px;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+      text-shadow: 0 0 35px #e9bd6138;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 470px;
+      margin: 0 auto;
+      line-height: 1.9;
+      font-size: 14px;
+    }
+
+    .gold-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 24px;
+      border: 0;
+      border-radius: 10px;
+      color: #171006;
+      background: linear-gradient(110deg, #b98225, #fff0b5, #d5a13e);
+      background-size: 200% auto;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 5px 28px #d9a43c22;
+      transition: transform .25s, box-shadow .25s;
+      animation: shine 5s linear infinite;
+    }
+
+    .gold-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px #e9bd6144;
+    }
+
+    .section {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 25px 0 55px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: 25px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 3px 0 15px;
+      scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar { display: none; }
+
+    .filter {
+      flex: 0 0 auto;
+      color: var(--muted);
+      background: #141414;
+      border: 1px solid #ffffff12;
+      padding: 9px 15px;
+      border-radius: 9px;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .filter.active, .filter:hover {
+      color: var(--gold-light);
+      border-color: #e9bd6180;
+      background: #e9bd6114;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .product {
+      position: relative;
+      min-width: 0;
+      padding: 21px 15px 17px;
+      border: 1px solid #ffffff12;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #171717, #0d0d0d);
+      overflow: hidden;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      animation: rise .7s both;
+    }
+
+    .product::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -130%;
+      width: 70%;
+      height: 100%;
+      transform: skewX(-22deg);
+      background: linear-gradient(90deg, transparent, #e9bd610c, transparent);
+      transition: left .65s;
+      pointer-events: none;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      border-color: #e9bd6180;
+      box-shadow: 0 10px 35px #d8a33b12, 0 0 0 1px #e9bd6110;
+    }
+
+    .product:hover::before { left: 160%; }
+
+    .app-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 16px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #202020;
+      border: 1px solid #e9bd6125;
+      box-shadow: 0 0 25px #e9bd6109;
+      transition: transform .3s;
+    }
+
+    .product:hover .app-icon { transform: scale(1.07) rotate(-3deg); }
+
+    .app-icon img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .app-icon .fallback {
+      font-size: 27px;
+      color: var(--gold);
+    }
+
+    .product h3 {
+      text-align: center;
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .product p {
+      min-height: 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+      margin: 0 0 15px;
+    }
+
+    .product-button {
+      display: block;
+      width: 100%;
+      border-radius: 8px;
+      padding: 10px 5px;
+      color: var(--gold-light);
+      border: 1px solid #e9bd6155;
+      background: #e9bd610b;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .product-button:hover {
+      color: #100c05;
+      background: var(--gold);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .benefit {
+      text-align: center;
+      padding: 20px 10px;
+      border: 1px solid #e9bd6124;
+      border-radius: 13px;
+      background: #ffffff04;
+    }
+
+    .benefit strong {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .benefit span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid #e9bd6125;
+      text-align: center;
+      padding: 25px 15px 35px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    footer strong { color: var(--gold); }
+
+    .notice {
+      width: min(800px, 90%);
+      margin: 0 auto 25px;
+      padding: 12px 15px;
+      border-radius: 10px;
+      background: #e9bd610b;
+      border: 1px solid #e9bd6125;
+      color: #c9c0ae;
+      font-size: 12px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    @keyframes breathe {
+      from { transform: scale(.85); opacity: .5; }
+      to { transform: scale(1.2); opacity: 1; }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-heading h2 { font-size: 22px; }
+    }
+
+    @media (max-width: 420px) {
+      .topbar { padding: 13px 5%; }
+      .brand { font-size: 18px; }
+      .hero { padding-top: 58px; }
+      .product { padding: 17px 11px 13px; }
+      .app-icon { width: 60px; height: 60px; }
+      .app-icon img { width: 37px; height: 37px; }
+      .benefits { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="logo">Ozzexx<span>_store</span></div>
-  <div style="font-size:13px;color:#c7bfdc">متجرك الرقمي ✦</div>
-</header>
+  <header class="topbar">
+    <a class="brand" href="#">Ozzexx_store</a>
+    <span class="status">✦ PREMIUM DIGITAL</span>
+  </header>
 
-<section class="hero">
-  <span class="pill">✦ عالم الاشتراكات الرقمية</span>
-  <h1>ارتقِ بتجربتك مع <span>Ozzexx</span></h1>
-  <p>تطبيقاتك المفضلة في مكان واحد<br>تصفح الخدمات واكتشف المتجر</p>
-</section>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">✦ YOUR DIGITAL WORLD ✦</span>
+      <h1>Upgrade Your <span>Digital Life.</span></h1>
+      <p>
+        اكتشف عالم الاشتراكات الرقمية بتصميم فاخر،
+        بسيط ومميز بالأسود والذهبي.
+      </p>
+      <a class="gold-button" href="#products">اكتشف التطبيقات ↓</a>
+    </section>
 
-<main>
-  <h2 class="section-title">✦ اكتشف التطبيقات</h2>
+    <section class="section reveal" id="products">
+      <div class="section-heading">
+        <div>
+          <h2>متجر <span class="gold">التطبيقات</span></h2>
+          <p>اختار الفئة وشوف التطبيقات المتوفرة</p>
+        </div>
+      </div>
 
-  <div class="filters">
-    <button class="active" onclick="filterProducts('all',this)">الكل</button>
-    <button onclick="filterProducts('ai',this)">الذكاء الاصطناعي</button>
-    <button onclick="filterProducts('video',this)">المشاهدة</button>
-    <button onclick="filterProducts('social',this)">التواصل</button>
-    <button onclick="filterProducts('games',this)">الألعاب</button>
-  </div>
+      <div class="filters" aria-label="تصنيف التطبيقات">
+        <button class="filter active" data-filter="all">الكل</button>
+        <button class="filter" data-filter="ai">الذكاء الاصطناعي</button>
+        <button class="filter" data-filter="video">المشاهدة</button>
+        <button class="filter" data-filter="social">التواصل</button>
+        <button class="filter" data-filter="games">الألعاب</button>
+      </div>
 
-  <div class="products">
-    <article class="card" data-category="ai">
-      <img class="app-icon" src="https://cdn.simpleicons.org/openai/FFFFFF" alt="OpenAI" onerror="this.style.display='none'">
-      <h2>ChatGPT Plus</h2>
-      <p>الذكاء الاصطناعي والإنتاجية</p>
-      <div class="price">السعر قريبًا</div>
-      <button onclick="details('ChatGPT Plus')">التفاصيل</button>
-    </article>
+      <div class="grid">
+        <article class="product" data-category="ai">
+          <div class="app-icon">
+            <img src="https://cdn.simpleicons.org/openai/FFFFFF"
+                 alt="OpenAI"
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+            <span class="fallback" hidden>✦</span>
+          </div>
+          <h3>ChatGPT</h3>
+          <p>أدوات الذكاء الاصطناعي والإنتاجية</p>
+          <button class="product-button" data-app="ChatGPT">التفاصيل</button>
+        </article>
 
-    <article class="card" data-category="video">
-      <img class="app-icon" src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" onerror="this.style.display='none'">
-      <h2>Netflix</h2>
-      <p>أفلام ومسلسلات</p>
-      <div class="price">السعر قريبًا</div>
-      <button onclick="details('Netflix')">التفاصيل</button>
-    </article>
+        <article class="product" data-category="video">
+          <div class="app-icon">
+            <img src="https://cdn.simpleicons.org/netflix/E50914"
+                 alt="Netflix"
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+            <span class="fallback" hidden>▶</span>
+          </div>
+          <h3>Netflix</h3>
+          <p>أفلام ومسلسلات وترفيه</p>
+          <button class="product-button" data-app="Netflix">التفاصيل</button>
+        </article>
 
-    <article class="card" data-category="social">
-      <img class="app-icon" src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat" onerror="this.style.display='none'">
-      <h2>Snapchat+</h2>
-      <p>مميزات إضافية للتطبيق</p>
-      <div class="price">السعر قريبًا</div>
-      <button onclick="details('Snapchat+')">التفاصيل</button>
-    </article>
+        <article class="product" data-category="social">
+          <div class="app-icon">
+            <img src="https://cdn.simpleicons.org/snapchat/FFFC00"
+                 alt="Snapchat"
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+            <span class="fallback" hidden>👻</span>
+          </div>
+          <h3>Snapchat+</h3>
+          <p>مزايا إضافية لتجربة التواصل</p>
+          <button class="product-button" data-app="Snapchat+">التفاصيل</button>
+        </article>
 
-    <article class="card" data-category="games">
-      <img class="app-icon" src="https://cdn.simpleicons.org/steam/FFFFFF" alt="Gaming" onerror="this.style.display='none'">
-      <h2>Gaming</h2>
-      <p>خدمات الألعاب الرقمية</p>
-      <div class="price">قريبًا</div>
-      <button onclick="details('Gaming')">التفاصيل</button>
-    </article>
-  </div>
+        <article class="product" data-category="games">
+          <div class="app-icon">
+            <img src="https://cdn.simpleicons.org/steam/FFFFFF"
+                 alt="Steam"
+                 onerror="this.style.display='none';this.nextElementSibling.hidden=false">
+            <span class="fallback" hidden>🎮</span>
+          </div>
+          <h3>Gaming</h3>
+          <p>عالم الألعاب والمحتوى الرقمي</p>
+          <button class="product-button" data-app="Gaming">التفاصيل</button>
+        </article>
+      </div>
 
-  <div class="notice">
-    ⚠️ هذه نسخة تجريبية من Ozzexx_store. الأسعار والبيع والتفعيل غير متاحة حاليًا. لن يتم تفعيل أي اشتراك قبل التحقق من توفر مصدر موثوق ومصرّح بإعادة البيع.
-  </div>
-</main>
+      <div class="benefits">
+        <div class="benefit">
+          <strong>✦ تصميم فاخر</strong>
+          <span>واجهة سوداء وذهبية متحركة</span>
+        </div>
+        <div class="benefit">
+          <strong>⌁ سهل الاستعمال</strong>
+          <span>مصمم للهاتف والكمبيوتر</span>
+        </div>
+        <div class="benefit">
+          <strong>◈ عالم رقمي</strong>
+          <span>اكتشف فئات التطبيقات المختلفة</span>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div style="font-size:16px;color:#b89aff;font-weight:bold;margin-bottom:9px">Ozzexx_store</div>
-  متجر رقمي تجريبي © 2026
-</footer>
+    <div class="notice">
+      نسخة تجريبية للعرض فقط. الأزرار لا تنفّذ شراءً حقيقيًا،
+      والأسعار وطرق الدفع غير مفعّلة حاليًا.
+    </div>
+  </main>
 
-<script>
-function filterProducts(category,button){
-  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');
-  document.querySelectorAll('.card').forEach(card=>{
-    card.classList.toggle('hidden',category!=='all'&&card.dataset.category!==category);
-  });
-}
-function details(name){
-  alert('اخترت '+name+'\nهذه خدمة تجريبية. الأسعار والطلبات والتفعيل غير مفعّلة بعد.');
-}
-</script>
+  <footer>
+    <strong>Ozzexx_store</strong><br>
+    Premium Digital Experience<br>
+    © <span id="year"></span> Ozzexx_store
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    const filters = document.querySelectorAll(".filter");
+    const products = document.querySelectorAll(".product");
+
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+        filters.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const category = button.dataset.filter;
+
+        products.forEach(product => {
+          product.hidden =
+            category !== "all" &&
+            product.dataset.category !== category;
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-app]").forEach(button => {
+      button.addEventListener("click", () => {
+        alert(
+          "أنت اخترت " + button.dataset.app +
+          "\nهذا المتجر تجريبي، والطلب الحقيقي غير مفعّل حاليًا."
+        );
+      });
+    });
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach(element => {
+        observer.observe(element);
+      });
+    } else {
+      document.querySelectorAll(".reveal").forEach(element => {
+        element.classList.add("visible");
+      });
+    }
+  </script>
 </body>
 </html>
