@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DigitalStore | متجرك الرقمي</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #28314b}
+.logo{font-size:23px;font-weight:bold;color:#63a8ff}
+.hero{text-align:center;padding:45px 18px 30px}
+.hero h1{font-size:32px;margin-bottom:12px}
+.hero p{color:#b5bfd5;line-height:1.8}
+.tag{display:inline-block;background:#172747;color:#83b9ff;padding:8px 14px;border-radius:20px}
+main{padding:20px 6% 45px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:16px}
+.card{background:#141d32;border:1px solid #283651;border-radius:16px;padding:20px 14px;text-align:center}
+.emoji{font-size:38px}
+.card h2{font-size:19px}
+.card p{color:#aebbd1;font-size:14px}
+.price{font-size:22px;color:#79b8ff;font-weight:bold;margin:18px 0}
+button{border:0;background:#2879ee;color:white;border-radius:9px;padding:12px;width:100%;font-size:15px;cursor:pointer}
+.note{background:#172033;border-radius:12px;padding:16px;margin-top:25px;color:#c3cee1;line-height:1.8;font-size:13px}
+footer{text-align:center;color:#8f9ab0;padding:24px;border-top:1px solid #28314b;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">DigitalStore</div>
+<div>متجرك الرقمي ✦</div>
+</header>
+<section class="hero">
+<span class="tag">عالم الاشتراكات الرقمية</span>
+<h1>كل خدماتك الرقمية في مكان واحد</h1>
+<p>اختار الخدمة والمدة اللي تناسبك<br>متجر تجريبي قيد الإعداد</p>
+</section>
+<main>
+<div class="products">
+<div class="card">
+<div class="emoji">🤖</div>
+<h2>ChatGPT Plus</h2>
+<p>اشتراك تجريبي</p>
+<div class="price">تجريبي</div>
+<button onclick="order('ChatGPT Plus')">عرض التفاصيل</button>
+</div>
+<div class="card">
+<div class="emoji">🎬</div>
+<h2>Netflix</h2>
+<p>اشتراك تجريبي</p>
+<div class="price">تجريبي</div>
+<button onclick="order('Netflix')">عرض التفاصيل</button>
+</div>
+<div class="card">
+<div class="emoji">👻</div>
+<h2>Snapchat+</h2>
+<p>اشتراك تجريبي</p>
+<div class="price">تجريبي</div>
+<button onclick="order('Snapchat+')">عرض التفاصيل</button>
+</div>
+<div class="card">
+<div class="emoji">🎮</div>
+<h2>Gaming</h2>
+<p>خدمات ألعاب رقمية</p>
+<div class="price">قريبًا</div>
+<button onclick="order('Gaming')">عرض التفاصيل</button>
+</div>
+</div>
+<div class="note">⚠️ هذه نسخة تجريبية للعرض فقط. لا يوجد بيع أو دفع أو تفعيل حقيقي حاليًا. الأسعار والتوفر سيُحددان بعد التحقق من الموردين.</div>
+</main>
+<footer>© 2026 DigitalStore — متجر تجريبي</footer>
+<script>
+function order(name){
+alert('اخترت: '+name+'\nالمتجر ما زال تجريبيًا، والطلبات غير مفعّلة حاليًا.');
+}
+</script>
+</body>
+</html>
